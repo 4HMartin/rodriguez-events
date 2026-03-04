@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Responsive Email Template</title>
+    <style>
+      /* General styles */
+      body, table, td, a {
+        text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      table {
+        border-spacing: 0;
+        border-collapse: collapse;
+        margin: 0 auto;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100% !important;
+        font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      .content{
+        font-family: 'roboto', system-ui, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      /* Responsive styles */
+      @media only screen and (max-width: 600px) {
+        .container {
+          width: 100% !important;
+          padding: 0 15px !important;
+        }
+        .content {
+          padding: 15px !important;
+        }
+        .order-total{
+          margin-left: 76% !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0; background-color: #f7f7f7;">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#F1F1F1" style="background-color:#F1F1F1;">
+      <tr>
+        <td align="center">
+          <!-- Email Container -->
+          <table class="container" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width: 600px; margin: 0 auto;">
+            <!-- Header Section -->
+            <tr>
+              <td align="center" colspan="2" style="padding-bottom:20px;">
+                <img src="https://4hmartin.com/dev/comparaalarmasbaleares-es/logotype_no_name.png" alt="header-image" width="200px"/>
+              </td>
+            </tr>
+            <!-- Content Section -->
+            <tr>
+              <td class="content" colspan="2" style="width: 100%; padding: 20px 38px; font-family: 'roboto', system-ui, 'Open Sans', 'Helvetica Neue', sans-serif; color: #413750;">
+                <h1 style="margin-top:0; color:#212b35; text-align: center;">Email enviado desde formulario de contacto web</h1>
+              </td>
+            </tr>
+            <tr>
+                <td class="content" align="center" style="width: 50%; font-family: 'roboto', system-ui, 'Open Sans', 'Helvetica Neue', sans-serif; color: #413750;">
+                    <p style="margin-bottom:16px; color:#637381; font-size:18px; font-weight:bold;">Nombre</p>
+                    <p style="margin-bottom:16px; color:#637381; font-size:18px; line-height:24px;">${name}</p>
+                </td>
+                <td class="content" align="center" style="width: 50%; font-family: 'roboto', system-ui, 'Open Sans', 'Helvetica Neue', sans-serif; color: #413750;">
+                    <p style="margin-bottom:16px; color:#637381; font-size:18px; font-weight:bold;">Email</p>
+                    <p style="margin-bottom:16px; color:#637381; font-size:18px; line-height:24px;">${email}</p>
+                </td>
+            </tr>
+            <tr>
+              <td class="content" align="center" style="width: 50%; font-family: 'roboto', system-ui, 'Open Sans', 'Helvetica Neue', sans-serif; color: #413750;">
+                <p style="margin-bottom:16px; color:#637381; font-size:18px; font-weight:bold;">Tel&eacute;fono</p>
+                <p style="margin-bottom:16px; color:#637381; font-size:18px; line-height:24px;">${phone}</p>
+              </td>
+              <td class="content" colspan="2" align="center" style="font-family: 'roboto', system-ui, 'Open Sans', 'Helvetica Neue', sans-serif; color: #413750;">
+                <p style="margin-bottom:16px; color:#637381; font-size:18px; font-weight:bold;">Mensaje</p>
+                <p style="margin-bottom:16px; color:#637381; font-size:18px; line-height:24px;">${message}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="content" align="center" style="width: 50%; font-family: 'roboto', system-ui, 'Open Sans', 'Helvetica Neue', sans-serif; color: #413750;">
+                <p style="margin-bottom:16px; color:#637381; font-size:18px; font-weight:bold;">Tipo de propiedad</p>
+                <p style="margin-bottom:16px; color:#637381; font-size:18px; line-height:24px;">${propertyType}</p>
+              </td>
+              <td class="content" colspan="2" align="center" style="font-family: 'roboto', system-ui, 'Open Sans', 'Helvetica Neue', sans-serif; color: #413750;">
+                <p style="margin-bottom:16px; color:#637381; font-size:18px; font-weight:bold;">Tipo de servicio</p>
+                <p style="margin-bottom:16px; color:#637381; font-size:18px; line-height:24px;">${serviceType}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="content" colspan="2" align="center" style="border-top:1px solid #e7e7e7; padding:20px 38px; font-family: 'roboto', system-ui, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                <p style="color:#637381; line-height:24px; text-align:center;">Este email ha sido enviado solo a los administradores.</p>
+              </td>
+            </tr>
+          <tr>
+            <td align="center" colspan="2" style="text-align:center; border-top:1px solid #e7e7e7; padding:20px 38px; font-size:11px; line-height:16px; font-family: 'roboto', system-ui, 'Open Sans', 'Helvetica Neue', sans-serif; color:#445566;">
+              <p>Ver este email en el navegador</p>
+              <p>
+                Este correo electrónico es de carácter informativo y relacionado con el formulario de contacto rellenado en <a href="https://comparaalarmasbaleares.es/" target="_blank" style="color:#155dfc;">comparaalarmasbaleares.es</a>. Si tienes alguna consulta sobre tu pedido, puedes ponerte en contacto con nosotros a través de <a href="mailto:info@comparaalarmasbaleares.es" style="color:#155dfc;">info@comparaalarmasbaleares.es</a> o <a href="tel:+34000000000" style="color:#155dfc;">+34 000 000 000</a>. De acuerdo con nuestra <a href="https://comparaalarmasbaleares.es/politica-privacidad/" target="_blank" style="color:#155dfc;">Política de privacidad</a>, tus datos personales han sido tratados exclusivamente para gestionar tu contacto. No recibirás comunicaciones comerciales a menos que hatas dado tu consentimiento previo. Para más información sobre cómo gestionamos tus datos, visita nuestra <a href="https://comparaalarmasbaleares.es/politica-privacidad/" target="_blank" style="color:#155dfc;">Política de privacidad</a>.
+              </p>
+            </td>
+          </tr>
+            <!-- Footer Section -->
+            <tr>
+              <td align="center" colspan="2" style="padding: 20px 0; background-color: #333333; color: #ffffff; font-family: 'roboto', system-ui, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 12px;">
+                <p style="margin: 0;padding-bottom:6px;">&copy; ${currentYear} Compara Alarmas Baleares.</p>
+                <a href="https://github.com/4Heber/" target="_blank" style="color:#0096ff;">Desarrollado por Heber M.Rodríguez.</a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+  </html>
