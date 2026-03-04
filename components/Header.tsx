@@ -88,7 +88,7 @@ export default function Header(){
         </motion.div>
 
         {/* Main header */}
-        <motion.header className={`w-full flex flex-row justify-between items-center px-4 top-0 bg-[--background] py-4 z-50 transition-all ease-in-out duration-300 sm:top-8 md:h-20 md:py-12 md:px-8 lg:px-16 xl:px-30 shadow-md shadow-black/5 ${isScrolled ? "fixed backdrop-blur-md bg-background/10" : "absolute top-0"} ${isScrolled && isOpen ? "h-[60vh]!" : "h-auto"}`}
+        <motion.header className={`w-full flex flex-row justify-between items-center px-4 top-0 bg-[--background] py-4 z-50 transition-all ease-in-out duration-300 border border-b-secondary-light sm:top-8 md:h-20 md:py-12 md:px-8 lg:px-16 xl:px-30 ${isScrolled ? "fixed backdrop-blur-md bg-background/10 shadow-md shadow-black/5" : "absolute top-0"} ${isScrolled && isOpen ? "h-[60vh]!" : "h-auto"}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.8, ease: "easeInOut" }}
@@ -169,7 +169,7 @@ export default function Header(){
                 </nav>
 
                 {/* Contact us button */}
-                <Link href="/contact" onClick={toggleMenu} className={`hidden relative w-fit min-w-fit py-3 px-6 border-2 border-primary bg-primary text-white transition-all duration-300 text-sm uppercase tracking-wider font-medium hover:bg-white hover:text-primary lg:block ${isActive('/contact') ? 'active-button' : ''}`}>
+                <Link href="/contact" onClick={toggleMenu} className={`hidden relative w-fit min-w-fit py-3 px-6 border-2 border-primary bg-primary text-white transition-all duration-300 text-sm uppercase tracking-wider font-medium rounded-xs hover:bg-white hover:text-primary lg:block ${isActive('/contact') ? 'active-button' : ''}`}>
                     request a quote
                 </Link>
         </motion.header>
