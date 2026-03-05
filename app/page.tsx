@@ -1,4 +1,5 @@
 import HeroSection from "@/components/home-view/HeroSection";
+import ServicesSection from "@/components/home-view/ServicesSection";
 import TrustBanner from "@/components/home-view/TrustBanner";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <main className="min-h-screen w-full">
       <HeroSection />
       <TrustBanner />
+      <ServicesSection />
     </main>
   );
 }
