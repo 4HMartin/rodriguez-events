@@ -1,4 +1,5 @@
 import HeroSection from "@/components/home-view/HeroSection";
+import PortfolioSection from "@/components/home-view/PortfolioSection";
 import ServicesSection from "@/components/home-view/ServicesSection";
 import TrustBanner from "@/components/home-view/TrustBanner";
 
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <TrustBanner />
       <ServicesSection />
+      <PortfolioSection />
     </main>
   );
 }

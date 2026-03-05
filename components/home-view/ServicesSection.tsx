@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ServicesSection(){
     return (
-        <section className="py-10 px-[7vw] bg-cream-warm">
+        <section className="py-24 px-[7vw] bg-cream-warm">
             {/* Services header */}
             <article className="flex justify-between items-end mb-16 flex-wrap gap-8">
                 <div className="max-w-120">
@@ -56,7 +56,7 @@ export default function ServicesSection(){
                     <p className="text-sm font-sans leading-relaxed text-charcoal-light mb-6">
                         Transform your home into a fine dining experience. Our private chef service brings restaurant-quality South American and Mediterranean cuisine directly to your table for intimate gatherings and celebrations.
                     </p>
-                    <Link href={'/weddings'} className="text-xs font-semibold tracking-widest uppercase text-primary inline-flex items-center gap-2 transition-gap duration-200 hover:gap-3.5 after:content-['→']">
+                    <Link href={'/chef-at-home'} className="text-xs font-semibold tracking-widest uppercase text-primary inline-flex items-center gap-2 transition-gap duration-200 hover:gap-3.5 after:content-['→']">
                         Book a Chef
                     </Link>
                 </div>
@@ -75,7 +75,7 @@ export default function ServicesSection(){
                     <p className="text-sm font-sans leading-relaxed text-charcoal-light mb-6">
                         Impress clients and energise teams with memorable corporate catering. Buffet lunches, plated dinners, cocktail receptions — delivered with professional precision and unforgettable flavour.
                     </p>
-                    <Link href={'/weddings'} className="text-xs font-semibold tracking-widest uppercase text-primary inline-flex items-center gap-2 transition-gap duration-200 hover:gap-3.5 after:content-['→']">
+                    <Link href={'/corporate'} className="text-xs font-semibold tracking-widest uppercase text-primary inline-flex items-center gap-2 transition-gap duration-200 hover:gap-3.5 after:content-['→']">
                         Corporate Options
                     </Link>
                 </div>

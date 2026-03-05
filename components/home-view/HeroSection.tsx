@@ -1,8 +1,8 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import heroImage01 from "@/public/images/ui/hero/IMG_wedding.jpg";
-import { easeIn, motion } from "framer-motion";
+import heroImage01 from "@/public/images/ui/hero/IMG_wedding.webp";
+import { motion } from "framer-motion";
 
 export default function HeroSection(){
 
