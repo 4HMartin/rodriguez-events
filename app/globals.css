@@ -82,8 +82,10 @@ body {
 
 .hero-img-overlay {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 120% at left center, var(--color-cream) 0%, transparent 55%),
-              radial-gradient(ellipse 80% 80% at bottom right, rgba(44,11,189,0.3) 0%, transparent 60%);
+  background:
+    linear-gradient(to right, var(--color-cream) 0%, transparent 30%),
+    /* radial-gradient(ellipse 80% 120% at left center, var(--color-cream) 0%, transparent 55%), */
+    radial-gradient(ellipse 80% 80% at bottom right, rgba(44,11,189,0.3) 0%, transparent 60%);
 }
 
 /* Active nav links */

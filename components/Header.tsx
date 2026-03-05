@@ -37,22 +37,22 @@ export default function Header(){
 
     const NavLinks = ({ toggleMenu }: NavLinkProps) => (
         <>
-            <Link href="/weddings" onClick={toggleMenu} className={`text-charcoal relative uppercase tracking-widest text-sm font-medium after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-[1px] after:bg-secondary after:scale-x-0 after:origin-left after:transition-all hover:text-secondary hover:after:scale-x-100 ${isActive('/weddings') ? 'active' : ''}`}>
+            <Link href="/weddings" onClick={toggleMenu} className={`text-charcoal relative uppercase tracking-widest text-sm font-medium after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-px after:bg-secondary after:scale-x-0 after:origin-left after:transition-all hover:text-secondary hover:after:scale-x-100 ${isActive('/weddings') ? 'active' : ''}`}>
                 weddings
             </Link>
-            <Link href="/chef-at-home" onClick={toggleMenu} className={`text-charcoal relative uppercase tracking-widest text-sm font-medium after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-[1px] after:bg-secondary after:scale-x-0 after:origin-left after:transition-all hover:text-secondary hover:after:scale-x-100 ${isActive('/chef-at-home') ? 'active' : ''}`}>
+            <Link href="/chef-at-home" onClick={toggleMenu} className={`text-charcoal relative uppercase tracking-widest text-sm font-medium after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-px after:bg-secondary after:scale-x-0 after:origin-left after:transition-all hover:text-secondary hover:after:scale-x-100 ${isActive('/chef-at-home') ? 'active' : ''}`}>
                 chef at home
             </Link>
-            <Link href="/corporate" onClick={toggleMenu} className={`text-charcoal relative uppercase tracking-widest text-sm font-medium after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-[1px] after:bg-secondary after:scale-x-0 after:origin-left after:transition-all hover:text-secondary hover:after:scale-x-100 ${isActive('/corporate') ? 'active' : ''}`}>
+            <Link href="/corporate" onClick={toggleMenu} className={`text-charcoal relative uppercase tracking-widest text-sm font-medium after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-px after:bg-secondary after:scale-x-0 after:origin-left after:transition-all hover:text-secondary hover:after:scale-x-100 ${isActive('/corporate') ? 'active' : ''}`}>
                 corporate
             </Link>
-            <Link href="/gallery" onClick={toggleMenu} className={`text-charcoal relative uppercase tracking-widest text-sm font-medium after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-[1px] after:bg-secondary after:scale-x-0 after:origin-left after:transition-all hover:text-secondary hover:after:scale-x-100 ${isActive('/gallery') ? 'active' : ''}`}>
+            <Link href="/gallery" onClick={toggleMenu} className={`text-charcoal relative uppercase tracking-widest text-sm font-medium after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-px after:bg-secondary after:scale-x-0 after:origin-left after:transition-all hover:text-secondary hover:after:scale-x-100 ${isActive('/gallery') ? 'active' : ''}`}>
                 gallery
             </Link>
-            <Link href="/about" onClick={toggleMenu} className={`text-charcoal relative uppercase tracking-widest text-sm font-medium after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-[1px] after:bg-secondary after:scale-x-0 after:origin-left after:transition-all hover:text-secondary hover:after:scale-x-100 ${isActive('/about') ? 'active' : ''}`}>
+            <Link href="/about" onClick={toggleMenu} className={`text-charcoal relative uppercase tracking-widest text-sm font-medium after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-px after:bg-secondary after:scale-x-0 after:origin-left after:transition-all hover:text-secondary hover:after:scale-x-100 ${isActive('/about') ? 'active' : ''}`}>
                 about
             </Link>
-            <Link href="/partners" onClick={toggleMenu} className={`text-charcoal relative uppercase tracking-widest text-sm font-medium after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-[1px] after:bg-secondary after:scale-x-0 after:origin-left after:transition-all hover:text-secondary hover:after:scale-x-100 ${isActive('/partners') ? 'active' : ''}`}>
+            <Link href="/partners" onClick={toggleMenu} className={`text-charcoal relative uppercase tracking-widest text-sm font-medium after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-px after:bg-secondary after:scale-x-0 after:origin-left after:transition-all hover:text-secondary hover:after:scale-x-100 ${isActive('/partners') ? 'active' : ''}`}>
                 partners
             </Link>
         </>
@@ -88,7 +88,7 @@ export default function Header(){
         </motion.div>
 
         {/* Main header */}
-        <motion.header className={`w-full flex flex-row justify-between items-center px-4 top-0 bg-[--background] py-4 z-50 transition-all ease-in-out duration-300 border border-b-secondary-light sm:top-8 md:h-20 md:py-12 md:px-8 lg:px-16 xl:px-30 ${isScrolled ? "fixed backdrop-blur-md bg-background/10 shadow-md shadow-black/5" : "absolute top-0"} ${isScrolled && isOpen ? "h-[60vh]!" : "h-auto"}`}
+        <motion.header className={`w-full flex flex-row justify-between items-center px-4 top-0 bg-[--background] py-4 z-50 transition-all ease-in-out duration-300 border border-b-secondary-light sm:top-8 md:h-20 md:py-12 md:px-8 lg:px-16 xl:px-30 ${isScrolled ? "fixed top-0! backdrop-blur-md bg-background/10 shadow-md shadow-black/5" : "absolute top-0"} ${isScrolled && isOpen ? "h-[60vh]!" : "h-auto"}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.8, ease: "easeInOut" }}
@@ -119,7 +119,7 @@ export default function Header(){
                     </motion.div>
                 </Link>
 
-                <nav className="flex justify-end items-center font-semibold tracking-wide w-fit whitespace-nowrap  xl:gap-8">
+                <nav className="flex justify-end items-center font-semibold tracking-wide w-fit whitespace-nowrap xl:gap-8">
                     {/* Botón del menú hamburguesa */}
                     <button className="lg:hidden" onClick={toggleMenu}>
                         {isOpen ? <LucideX className="w-8 h-8 text-charcoal "/> : <Menu className="w-8 h-8 text-charcoal "/>}

@@ -1,6 +1,8 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import heroImage01 from "@/public/images/ui/hero/IMG_wedding.jpg";
+import { easeIn, motion } from "framer-motion";
 
 export default function HeroSection(){
 
@@ -35,14 +37,19 @@ export default function HeroSection(){
 
             {/* Image section - right side */}
             <article className="relative overflow-hidden">
-                <div className="absolute inset-0">
+                <motion.div
+                    className="absolute inset-0"
+                    initial={{ scale: 1.15, x: 0, y: 0 }}
+                    animate={{ scale: 1.05, x: 20, y: 20 }}
+                    transition={{ duration: 6, ease: "easeOut" }}
+                >
                     <Image 
                         src={heroImage01}
                         alt="hero_section_image"
                         className="w-full h-full object-cover"
                     />
-                </div>
-                {/* Overlay */}
+                </motion.div>
+                {/* Overlay - CSS custom class for radial-gradients */}
                 <div className="hero-img-overlay"></div>
             </article>
         </section>
