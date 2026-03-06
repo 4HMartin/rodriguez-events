@@ -65,7 +65,7 @@ export default function Header(){
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="hidden absolute top-0 left-0 w-full bg-primary sm:flex items-center py-1 sm:justify-center sm:gap-8 sm:px-2 lg:px-16 xl:px-30 lg:justify-between"
+            className="hidden absolute top-0 left-0 z-50 w-full bg-primary sm:flex items-center py-1 sm:justify-center sm:gap-8 sm:px-2 lg:px-16 xl:px-30 lg:justify-between"
         >
             {/* Award link */}
             <Link href={"https://directory.the-wedding-industry-awards.co.uk/united-kingdom/oswestry/wedding-caterer/rodriguez-events-ltd"} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">

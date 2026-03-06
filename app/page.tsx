@@ -1,6 +1,7 @@
 import AboutSection from "@/components/home-view/AboutSection";
 import HeroSection from "@/components/home-view/HeroSection";
 import PortfolioSection from "@/components/home-view/PortfolioSection";
+import ReviewsSection from "@/components/home-view/ReviewsSection";
 import ServicesSection from "@/components/home-view/ServicesSection";
 import TrustBanner from "@/components/home-view/TrustBanner";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <ServicesSection />
       <PortfolioSection />
       <AboutSection />
+      <ReviewsSection />
     </main>
   );
 }
