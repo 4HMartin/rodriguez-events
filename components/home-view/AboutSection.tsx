@@ -1,4 +1,6 @@
+"use client"
 import Image from "next/image";
+import { motion } from "framer-motion";
 import aboutImage from "@/public/images/ui/about/about-image-02.webp";
 import logotype from "@/public/images/ui/logotype.webp";
 import TWIAAward from "@/public/images/ui/about/TWIA_Award_2025.webp";
@@ -11,76 +13,138 @@ export default function AboutSection(){
 
     return (
         <section className="grid grid-cols-2 bg-primary max-h-150">
-            {/* Image */}
+
+            {/* ── Image — left side ── */}
             <article className="relative overflow-hidden max-h-150 after:absolute after:inset-0 after:bg-linear-to-r after:from-75% after:from-transparent after:to-primary">
-                {/* TWIA Award badge link */}
-                <Link 
-                    href={`${awardLink}`}
-                    target="_blank"
-                    className="absolute top-6 left-6 z-10 p-2 w-38 rounded-lg bg-cream border-2 border-b-pink-700 shadow-xl group"
+
+                {/* TWIA Award badge */}
+                <motion.div
+                    initial={{ opacity: 0, x: -20, y: -10 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                    className="absolute top-6 left-6 z-10"
                 >
-                    <ExternalLink className="absolute top-2 right-2 w-5 h-5 transition-all group-hover:text-pink-700"/>
+                    <Link
+                        href={`${awardLink}`}
+                        target="_blank"
+                        className="block p-2 w-38 rounded-lg bg-cream border-2 border-b-pink-700 shadow-xl group"
+                    >
+                        <ExternalLink className="absolute top-2 right-2 w-5 h-5 transition-all group-hover:text-pink-700"/>
+                        <Image
+                            src={TWIAAward}
+                            alt="The wedding industry awards - 2025 - Rodriguez Events"
+                            className="object-cover w-full h-full transition-all group-hover:scale-105"
+                        />
+                    </Link>
+                </motion.div>
+
+                {/* About image */}
+                <motion.div
+                    className="w-full h-full"
+                    initial={{ scale: 1.08, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 1.0, ease: "easeOut" }}
+                >
                     <Image
-                        src={TWIAAward}
-                        alt="The wedding industry awards - 2025 - Rodriguez Events"
-                        className="object-cover w-full h-full transition-all group-hover:scale-105"
+                        src={aboutImage}
+                        alt="A family passion for culinary excellence"
+                        className="object-cover object-[50%_100%] w-full h-full opacity-95"
                     />
-                </Link>
-                <Image
-                    src={aboutImage}
-                    alt="A family passion for culinary excellence"
-                    className="object-cover object-[50%_100%] w-full h-full opacity-95"
-                />
+                </motion.div>
+
             </article>
 
-            {/* Content */}
+            {/* ── Content — right side ── */}
             <article className="py-20 pr-[6vw] pl-[4vw]">
                 <div className="flex items-center">
                     <div>
+
                         {/* Tag */}
-                        <span className="inline-flex items-center gap-2.5 text-sm font-semibold tracking-widest uppercase text-secondary mb-8 before:w-10 before:h-px before:bg-secondary">
+                        <motion.span
+                            className="inline-flex items-center gap-2.5 text-sm font-semibold tracking-widest uppercase text-secondary mb-8 before:w-10 before:h-px before:bg-secondary"
+                            initial={{ opacity: 0, y: 16 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.4 }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                        >
                             Our Story
-                        </span>
+                        </motion.span>
+
                         {/* Title */}
-                        <h2 className="text-5xl font-bold leading-tight text-white mb-6">
+                        <motion.h2
+                            className="text-5xl font-bold leading-tight text-white mb-6"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.4 }}
+                            transition={{ duration: 0.55, delay: 0.1, ease: "easeOut" }}
+                        >
                             A Family Passion for <em className="italic text-secondary">Culinary Excellence</em>
-                        </h2>
-                        {/* Separator */}
-                        <div className="w-15 h-0.5 bg-linear-to-r from-secondary to-secondary-light my-6"></div>
+                        </motion.h2>
+
+                        {/* Divider */}
+                        <motion.div
+                            className="w-15 h-0.5 bg-linear-to-r from-secondary to-secondary-light my-6"
+                            initial={{ scaleX: 0 }}
+                            whileInView={{ scaleX: 1 }}
+                            viewport={{ once: true, amount: 0.4 }}
+                            style={{ originX: 0 }}
+                            transition={{ duration: 0.45, delay: 0.2, ease: "easeOut" }}
+                        />
+
                         {/* Description */}
-                        <p className="text-lg font-serif font-light leading-relaxed text-cream-warm max-w-105 mb-12">
-                            {/* Emma and Heber, the husband and wife team behind Rodriguez Events, bring over 30 years of hospitality expertise to every event. Having worked in Michelin-starred restaurants, hotels, and event companies, they now pour their passion into their own catering business, delighting in the variety and creativity that each occasion brings. Emma, originally from Shropshire, is committed to sourcing high-quality, local, seasonal produce. Meanwhile, Heber hails from Uruguay, infusing our dishes with authentic fiesta flair. */}
-
-                            {/* With over 30 years of expertise in Michelin-starred restaurants and luxury hospitality, Emma and Heber bring a world-class touch to Rodriguez Events.<br />
-                            Our catering is defined by a unique culinary marriage: Emma's commitment to local, seasonal Shropshire produce paired with Heber's authentic Uruguayan flair. Whether it's an intimate gathering or a grand celebration, we pour our passion into creating vibrant, high-quality dining experiences that bring the spirit of the fiesta to every plate. */}
-
+                        <motion.p
+                            className="text-lg font-serif font-light leading-relaxed text-cream-warm max-w-105 mb-12"
+                            initial={{ opacity: 0, y: 16 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.4 }}
+                            transition={{ duration: 0.55, delay: 0.25, ease: "easeOut" }}
+                        >
                             Rodriguez Events is a catering business run by husband-and-wife team Emma and Heber, who leverage over 30 years of high-end hospitality experience—including Michelin-starred backgrounds.
-                        </p>
+                        </motion.p>
+
                     </div>
-                    <div className="overflow-hidden max-w-80">
+
+                    {/* Logotype */}
+                    <motion.div
+                        className="overflow-hidden max-w-80"
+                        initial={{ opacity: 0, x: 24 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.65, delay: 0.35, ease: "easeOut" }}
+                    >
                         <Image
                             src={logotype}
                             alt="Rodriguez Events Catering & Cocktails"
                             className="object-cover w-full h-full"
                         />
-                    </div>
+                    </motion.div>
                 </div>
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2.5 mt-8 text-secondary">
-                    <span className="py-1.5 px-5 border border-secondary rounded-2xl text-xs font-medium tracking-wider uppercase">
-                        Spanish
-                    </span>
-                    <span className="py-1.5 px-5 border border-secondary rounded-2xl text-xs font-medium tracking-wider uppercase">
-                        South American
-                    </span>
-                    <span className="py-1.5 px-5 border border-secondary rounded-2xl text-xs font-medium tracking-wider uppercase">
-                        Mediterranean
-                    </span>
-                    <span className="py-1.5 px-5 border border-secondary rounded-2xl text-xs font-medium tracking-wider uppercase">
-                        Dietary Inclusive
-                    </span>
-                </div>
+
+                {/* Cuisine tags */}
+                <motion.div
+                    className="flex flex-wrap gap-2.5 mt-8 text-secondary"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+                >
+                    {["Spanish", "South American", "Mediterranean", "Dietary Inclusive"].map((tag, i) => (
+                        <motion.span
+                            key={tag}
+                            className="py-1.5 px-5 border border-secondary rounded-2xl text-xs font-medium tracking-wider uppercase"
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.4 }}
+                            transition={{ duration: 0.35, delay: 0.45 + i * 0.08, ease: "easeOut" }}
+                        >
+                            {tag}
+                        </motion.span>
+                    ))}
+                </motion.div>
+
             </article>
         </section>
-    )
+    );
 }
