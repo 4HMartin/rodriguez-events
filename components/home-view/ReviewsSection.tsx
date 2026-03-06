@@ -8,7 +8,6 @@ export default function ReviewsSection(){
 
     const [isPaused, setIsPaused] = useState(false);
 
-    /** Clients Reviews Array object */
     const reviews = [
         {
             stars: 5,
@@ -138,46 +137,97 @@ export default function ReviewsSection(){
             event: "Chef at Home",
             link: "https://share.google/LsrtUa6tfJcbW8XH7"
         },
-    ]
+    ];
 
     return (
         <section className="py-24 px-[7vw] bg-cream-warm overflow-hidden">
-            {/* Header */}
+
+            {/* ── Header ── */}
             <article className="mb-14">
+
                 {/* Tag */}
-                <span className="inline-flex items-center gap-2.5 text-sm font-semibold tracking-widest uppercase text-secondary mb-8 before:w-10 before:h-px before:bg-secondary">
+                <motion.span
+                    className="inline-flex items-center gap-2.5 text-sm font-semibold tracking-widest uppercase text-secondary mb-8 before:w-10 before:h-px before:bg-secondary"
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                >
                     Client Reviews
-                </span>
+                </motion.span>
+
                 {/* Title */}
-                <h2 className="text-5xl font-bold leading-tight text-charcoal mb-6">
+                <motion.h2
+                    className="text-5xl font-bold leading-tight text-charcoal mb-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.55, delay: 0.1, ease: "easeOut" }}
+                >
                     What Our <em className="italic text-primary">Clients Say</em>
-                </h2>
-                {/* Separator */}
-                <div className="w-15 h-0.5 bg-linear-to-r from-secondary to-secondary-light my-6"></div>
-                {/* Reviews aggregate */}
-                <div className="flex items-center gap-6 mb-10 flex-wrap">
-                    <div className="font-serif text-6xl font-bold text-primary leading-normal">5.0</div>
+                </motion.h2>
+
+                {/* Divider */}
+                <motion.div
+                    className="w-15 h-0.5 bg-linear-to-r from-secondary to-secondary-light my-6"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    style={{ originX: 0 }}
+                    transition={{ duration: 0.45, delay: 0.2, ease: "easeOut" }}
+                />
+
+                {/* Aggregate score */}
+                <motion.div
+                    className="flex items-center gap-6 mb-10 flex-wrap"
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                >
+                    <motion.div
+                        className="font-serif text-6xl font-bold text-primary leading-normal"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true, amount: 0.5 }}
+                        transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
+                    >
+                        5.0
+                    </motion.div>
                     <div>
                         <div className="flex gap-1 mb-2">
-                            <span className="text-secondary text-lg">★</span>
-                            <span className="text-secondary text-lg">★</span>
-                            <span className="text-secondary text-lg">★</span>
-                            <span className="text-secondary text-lg">★</span>
-                            <span className="text-secondary text-lg">★</span>
+                            {[...Array(5)].map((_, i) => (
+                                <motion.span
+                                    key={i}
+                                    className="text-secondary text-lg"
+                                    initial={{ opacity: 0, y: -8 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.5 }}
+                                    transition={{ duration: 0.3, delay: 0.4 + i * 0.07, ease: "easeOut" }}
+                                >
+                                    ★
+                                </motion.span>
+                            ))}
                         </div>
                         <p className="text-sm text-charcoal-light">Based on verified reviews</p>
                     </div>
-                </div>
+                </motion.div>
+
             </article>
 
-            {/* Track wrap */}
-            <article className="overflow-x-hidden relative
-                before:absolute before:top-0 before:bottom-0 before:w-20 before:z-20 before:pointer-events-none before:left-0 before:bg-linear-to-r before:from-cream-warm before:to-transparent
-                after:absolute after:top-0 after:bottom-0 after:w-20 after:z-20 after:pointer-events-none after:right-0 after:bg-linear-to-l after:from-cream-warm after:to-transparent"
+            {/* ── Track wrap ── */}
+            <motion.article
+                className="overflow-x-hidden relative
+                    before:absolute before:top-0 before:bottom-0 before:w-20 before:z-20 before:pointer-events-none before:left-0 before:bg-linear-to-r before:from-cream-warm before:to-transparent
+                    after:absolute after:top-0 after:bottom-0 after:w-20 after:z-20 after:pointer-events-none after:right-0 after:bg-linear-to-l after:from-cream-warm after:to-transparent"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             >
                 {/* Track */}
                 <motion.div
-                    className='flex gap-6 w-max'
+                    className="flex gap-6 w-max"
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}
                     animate={{ x: isPaused ? undefined : [0, -1000] }}
@@ -190,42 +240,37 @@ export default function ReviewsSection(){
                         },
                     }}
                 >
-                    {[...reviews,...reviews].map((review, index) => {
-                            return (
-                                // Card
-                                <Link key={index} href={review.link} target='_blank' className='bg-cream shrink-0 w-85 p-8 border-t-[3px] border-t-secondary relative rounded-xs transition-all duration-300 group hover:shadow-sm hover:-translate-y-2'>
-                                    <div>
-                                        {/* {review.stars} */}
-                                        <span className="text-secondary text-lg">★</span>
-                                        <span className="text-secondary text-lg">★</span>
-                                        <span className="text-secondary text-lg">★</span>
-                                        <span className="text-secondary text-lg">★</span>
-                                        <span className="text-secondary text-lg">★</span>
-                                    </div>
-                                    <Quote className='w-6 h-6 text-secondary-pale absolute top-2 right-2 group-hover:hidden'/>
-                                    <ExternalLink className='hidden w-6 h-6 text-secondary-light absolute top-2 right-2 group-hover:block'/>
-                                    <p className='max-h-52 font-serif text-lg leading-relaxed italic text-charcoal mb-6 overflow-hidden wrap-break-word'>
-                                        {review.text}
-                                    </p>
-                                    <div className='flex items-center gap-3'>
-                                        <div className='w-10 h-10 rounded-full bg-primary flex items-center justify-center font-serif text-lg text-white font-semibold shrink-0'>
-                                            {review.initial}
-                                        </div>
-                                        <div>
-                                            <div className='text-sm font-semibold text-charcoal'>
-                                                {review.name}
-                                            </div>
-                                            <div className='text-xs text-charcoal-light tracking-wider'>
-                                                {review.event}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Link>
-                            )
-                        })
-                    }
+                    {[...reviews, ...reviews].map((review, index) => (
+                        <Link
+                            key={index}
+                            href={review.link}
+                            target="_blank"
+                            className="bg-cream shrink-0 w-85 p-8 border-t-[3px] border-t-secondary relative rounded-xs transition-all duration-300 group hover:shadow-sm hover:-translate-y-2"
+                        >
+                            <div>
+                                {[...Array(review.stars)].map((_, i) => (
+                                    <span key={i} className="text-secondary text-lg">★</span>
+                                ))}
+                            </div>
+                            <Quote className="w-6 h-6 text-secondary-pale absolute top-2 right-2 group-hover:hidden"/>
+                            <ExternalLink className="hidden w-6 h-6 text-secondary-light absolute top-2 right-2 group-hover:block"/>
+                            <p className="max-h-52 font-serif text-lg leading-relaxed italic text-charcoal mb-6 overflow-hidden wrap-break-word">
+                                {review.text}
+                            </p>
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-serif text-lg text-white font-semibold shrink-0">
+                                    {review.initial}
+                                </div>
+                                <div>
+                                    <div className="text-sm font-semibold text-charcoal">{review.name}</div>
+                                    <div className="text-xs text-charcoal-light tracking-wider">{review.event}</div>
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
                 </motion.div>
-            </article>
+            </motion.article>
+
         </section>
-    )
+    );
 }
