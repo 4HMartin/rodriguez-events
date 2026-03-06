@@ -67,7 +67,7 @@ export default function Header(){
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
             className="hidden absolute top-0 left-0 z-50 w-full bg-primary sm:flex items-center py-1 sm:justify-center sm:gap-8 sm:px-2 lg:px-16 xl:px-30 lg:justify-between"
         >
             {/* Award link */}
@@ -94,14 +94,14 @@ export default function Header(){
         <motion.header className={`w-full flex flex-row justify-between items-center px-4 top-0 bg-[--background] py-4 z-50 transition-all ease-in-out duration-300 border border-b-secondary-light sm:top-8 md:h-20 md:py-12 md:px-8 lg:px-16 xl:px-30 ${isScrolled ? "fixed top-0! backdrop-blur-md bg-background/10 shadow-md shadow-black/5" : "absolute top-0"} ${isScrolled && isOpen ? "h-[60vh]!" : "h-auto"}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1.8, ease: "easeInOut" }}
+                transition={{ duration: 0.85, ease: "easeInOut" }}
             >
                 {/* Imagotype */}
                 <Link href="/">
                     <motion.div 
-                        initial={{ opacity: 0, x: 50 }}
+                        initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.6, duration: 1, ease: "easeOut" }}
+                        transition={{ delay: 0.15, duration: 1.05, ease: "easeOut" }}
                         className="relative w-68 flex items-center gap-4 lg:w-20 xl:w-68"
                     >
                         {/* <Image

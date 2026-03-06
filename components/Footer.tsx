@@ -127,7 +127,7 @@ export default function Footer(){
                         Privacy Policy
                     </Link>
                 </p>
-                <Link href={'https://4hmartin.com/'} className="font-sans group flex items-center gap-2">
+                <Link href={'https://4hmartin.com/'} target="_blank" className="font-sans group flex items-center gap-2">
                     Crafted with passion by <em className="text-emerald-500">Heber Martin Rodríguez</em>
                     <ExternalLink className="w-3 h-3 text-white transition-all duration-300 group-hover:text-emerald-500"/>
                 </Link>
