@@ -14,7 +14,7 @@ export default function AboutSection(){
     return (
         <section className="grid grid-cols-2 bg-primary max-h-150">
 
-            {/* ── Image — left side ── */}
+            {/*  Image — left side  */}
             <article className="relative overflow-hidden max-h-150 after:absolute after:inset-0 after:bg-linear-to-r after:from-75% after:from-transparent after:to-primary">
 
                 {/* TWIA Award badge */}
@@ -56,7 +56,7 @@ export default function AboutSection(){
 
             </article>
 
-            {/* ── Content — right side ── */}
+            {/*  Content — right side  */}
             <article className="py-20 pr-[6vw] pl-[4vw]">
                 <div className="flex items-center">
                     <div>

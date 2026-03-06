@@ -142,7 +142,7 @@ export default function ReviewsSection(){
     return (
         <section className="py-24 px-[7vw] bg-cream-warm overflow-hidden">
 
-            {/* ── Header ── */}
+            {/*  Header  */}
             <article className="mb-14">
 
                 {/* Tag */}
@@ -215,7 +215,7 @@ export default function ReviewsSection(){
 
             </article>
 
-            {/* ── Track wrap ── */}
+            {/*  Track wrap  */}
             <motion.article
                 className="overflow-x-hidden relative
                     before:absolute before:top-0 before:bottom-0 before:w-20 before:z-20 before:pointer-events-none before:left-0 before:bg-linear-to-r before:from-cream-warm before:to-transparent
