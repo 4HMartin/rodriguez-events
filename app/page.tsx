@@ -1,4 +1,5 @@
 import AboutSection from "@/components/home-view/AboutSection";
+import CTABandSection from "@/components/home-view/CTABandSection";
 import HeroSection from "@/components/home-view/HeroSection";
 import PortfolioSection from "@/components/home-view/PortfolioSection";
 import ReviewsSection from "@/components/home-view/ReviewsSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <PortfolioSection />
       <AboutSection />
       <ReviewsSection />
+      <CTABandSection />
     </main>
   );
 }

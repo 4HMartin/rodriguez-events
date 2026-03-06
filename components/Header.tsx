@@ -8,10 +8,9 @@ import { motion } from "framer-motion";
 // local images
 import imagotype from '@/public/images/ui/imagotype_300x300.png';
 import logo_text from '@/public/images/ui/logo_text_650x164.png';
-import logotype from '@/public/images/ui/logotype_250x250.png';
+// import logotype from '@/public/images/ui/logotype_250x250.png';
 // icons
-import { LucideX } from "lucide-react";
-import { Menu, Mail, Phone, Award, ExternalLink } from "lucide-react";
+import { LucideX, Menu, Mail, Phone, Award, ExternalLink } from "lucide-react";
 
 export default function Header(){
 
@@ -26,6 +25,10 @@ export default function Header(){
     interface NavLinkProps {
         toggleMenu?: () => void
     }
+
+    const awardLink = process.env.NEXT_PUBLIC_AWARD_LINK || "";
+    const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "";
+    const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || "";
 
     useEffect(()=>{
         const handleScroll = () => {
@@ -68,19 +71,19 @@ export default function Header(){
             className="hidden absolute top-0 left-0 z-50 w-full bg-primary sm:flex items-center py-1 sm:justify-center sm:gap-8 sm:px-2 lg:px-16 xl:px-30 lg:justify-between"
         >
             {/* Award link */}
-            <Link href={"https://directory.the-wedding-industry-awards.co.uk/united-kingdom/oswestry/wedding-caterer/rodriguez-events-ltd"} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
+            <Link href={`${awardLink}`} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
                 <Award className="w-5 text-white pb-0.5 transition-all group-hover:text-secondary"/>
                 The Wedding Industry Awards
                 <ExternalLink className="w-4 text-white/50 pb-0.5 transition-all hidden group-hover:block"/>
             </Link>
             <div className="flex items-center gap-8">
                 {/* Email link */}
-                <Link href={"mailto:hola@rodriguez-events.com"} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
+                <Link href={`mailto:${contactEmail}`} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
                     <Mail className="w-5 text-white pb-0.5 transition-all group-hover:text-secondary"/>
                     hola@rodriguez-events.com
                 </Link>
                 {/* Phone link */}
-                <Link href={"tel:07495313711"} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
+                <Link href={`tel:${contactPhone}`} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
                     <Phone className="w-4.5 text-white pb-0.5 transition-all group-hover:text-secondary"/>
                     07495313711
                 </Link>
