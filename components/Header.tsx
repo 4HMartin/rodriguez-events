@@ -7,7 +7,7 @@ import Image from "next/image";
 import imagotype from '@/public/images/ui/imagotype_300x300.png';
 import logo_text from '@/public/images/ui/logo_text_650x164.png';
 // import logotype from '@/public/images/ui/logotype_250x250.png';
-import { LucideX, Menu, Mail, Phone, Award, ExternalLink, MenuIcon } from "lucide-react";
+import { Mail, Phone, Award, ExternalLink } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 
 export default function Header() {
@@ -66,22 +66,22 @@ export default function Header() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeInOut" }}
-                className="hidden absolute top-0 left-0 z-50 w-full bg-primary sm:flex items-center py-1 sm:justify-center sm:gap-8 sm:px-2 lg:px-16 xl:px-30 lg:justify-between"
+                className="absolute top-0 left-0 z-50 w-full bg-primary flex items-center py-1 sm:justify-center sm:gap-8 sm:px-2 lg:px-16 xl:px-30 lg:justify-between"
             >
                 {/* Award link */}
-                <Link href={`${awardLink}`} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
+                <Link href={`${awardLink}`} className="hidden sm:flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
                     <Award className="w-5 text-white pb-0.5 transition-all group-hover:text-secondary" />
                     The Wedding Industry Awards
                     <ExternalLink className="w-4 text-white/50 pb-0.5 transition-all hidden group-hover:block" />
                 </Link>
                 <div className="flex items-center gap-8">
                     {/* Email link */}
-                    <Link href={`mailto:${contactEmail}`} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
+                    <Link href={`mailto:${contactEmail}`} className="hidden sm:flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
                         <Mail className="w-5 text-white pb-0.5 transition-all group-hover:text-secondary" />
                         hola@rodriguez-events.com
                     </Link>
                     {/* Phone link */}
-                    <Link href={`tel:${contactPhone}`} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
+                    <Link href={`tel:${contactPhone}`} className="hidden sm:flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
                         <Phone className="w-4.5 text-white pb-0.5 transition-all group-hover:text-secondary" />
                         07495313711
                     </Link>
@@ -103,7 +103,7 @@ export default function Header() {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.15, duration: 1.05, ease: "easeOut" }}
-                        className="hidden relative w-68 items-center gap-4 md:flex lg:w-20 xl:w-68"
+                        className="hidden relative items-center gap-4 md:flex lg:w-20 xl:w-68"
                     >
                         {/* <Image
                             src={logotype}
@@ -118,14 +118,14 @@ export default function Header() {
                         <Image
                             src={logo_text}
                             alt="Rodriguez Events Catering & Cocktails"
-                            className="w-40 lg:hidden xl:block"
+                            className="w-40 md:hidden xl:block"
                         />
                     </motion.div>
                 </Link>
 
-                <nav className="flex justify-end items-center font-semibold tracking-wide w-fit whitespace-nowrap xl:gap-8">
+                <nav className="hidden md:flex justify-end items-center font-semibold tracking-wide w-fit whitespace-nowrap xl:gap-8">
                     {/* Menú de navegación */}
-                    <div className="hidden lg:flex lg:justify-between lg:items-center lg:w-fit lg:gap-4 2xl:gap-8">
+                    <div className="md:flex md:justify-between md:items-center md:w-fit md:gap-4 2xl:gap-8">
                         <NavLinks />
                     </div>
                 </nav>
