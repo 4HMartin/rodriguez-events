@@ -12,10 +12,10 @@ import imagePrivateDining from "@/public/images/ui/portfolio-grid/private-dining
 
 export default function PortfolioSection(){
     return (
-        <section className="py-24 px-[7vw] bg-cream">
+        <section className="py-16 px-6 bg-cream sm:py-20 sm:px-10 lg:py-24 lg:px-[7vw]">
 
             {/* Gallery header */}
-            <article className="flex justify-between items-end mb-16 flex-wrap gap-8">
+            <article className="flex justify-between items-end mb-10 flex-wrap gap-8 sm:mb-16">
                 <div className="w-fit">
 
                     {/* Tag */}
@@ -31,7 +31,7 @@ export default function PortfolioSection(){
 
                     {/* H2 */}
                     <motion.h2
-                        className="text-5xl font-bold leading-tight text-charcoal mb-6"
+                        className="text-3xl font-bold leading-tight text-charcoal mb-6 sm:text-4xl lg:text-5xl"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.5 }}
@@ -53,20 +53,18 @@ export default function PortfolioSection(){
                 </div>
             </article>
 
-            {/* Grid */}
-            <article className="grid grid-cols-12 grid-rows-[repeat(3,220px)] gap-2 mb-16">
+            {/* Grid — mobile: 2 cols simple, md: 4 cols, lg: 12 cols masonry */}
+            <article className="grid grid-cols-2 gap-2 mb-10 sm:mb-16 md:grid-cols-4 lg:grid-cols-12 lg:grid-rows-[repeat(3,220px)]">
 
-                {/* 01 - Wedding Reception — large, entra desde la izquierda */}
+                {/* 01 - Wedding Reception */}
                 <motion.div
-                    className="col-start-1 col-end-6 row-start-1 row-end-3 overflow-hidden relative cursor-pointer rounded-xs group"
+                    className="col-span-2 h-52 overflow-hidden relative cursor-pointer rounded-xs group md:col-span-2 md:row-span-2 md:h-full lg:col-start-1 lg:col-end-6 lg:row-start-1 lg:row-end-3"
                     initial={{ opacity: 0, x: -24 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.65, delay: 0.05, ease: "easeOut" }}
                 >
-                    <Image src={imageWedding} alt="wedding-reception"
-                        className="object-cover w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105"
-                    />
+                    <Image src={imageWedding} alt="wedding-reception" className="object-cover w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-linear-to-t from-primary to-transparent to-60% opacity-0 transition-opacity duration-500 flex items-end p-5 group-hover:opacity-100">
                         <span className="text-xs font-semibold tracking-widest uppercase text-white">Wedding Reception</span>
                     </div>
@@ -74,15 +72,13 @@ export default function PortfolioSection(){
 
                 {/* 02 - Spanish Tapas */}
                 <motion.div
-                    className="col-start-6 col-end-10 row-start-1 row-end-2 overflow-hidden relative cursor-pointer rounded-xs group"
+                    className="col-span-1 h-40 overflow-hidden relative cursor-pointer rounded-xs group md:col-span-2 md:h-52 lg:col-start-6 lg:col-end-10 lg:row-start-1 lg:row-end-2 lg:h-full"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.55, delay: 0.15, ease: "easeOut" }}
                 >
-                    <Image src={imageSpanishTapas} alt="spanish-tapas"
-                        className="object-cover w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105"
-                    />
+                    <Image src={imageSpanishTapas} alt="spanish-tapas" className="object-cover w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-linear-to-t from-primary to-transparent to-60% opacity-0 transition-opacity duration-500 flex items-end p-5 group-hover:opacity-100">
                         <span className="text-xs font-semibold tracking-widest uppercase text-white">Spanish Tapas</span>
                     </div>
@@ -90,15 +86,13 @@ export default function PortfolioSection(){
 
                 {/* 03 - Paella */}
                 <motion.div
-                    className="col-start-10 col-end-13 row-start-1 row-end-2 overflow-hidden relative cursor-pointer rounded-xs group"
+                    className="col-span-1 h-40 overflow-hidden relative cursor-pointer rounded-xs group md:col-span-2 md:h-52 lg:col-start-10 lg:col-end-13 lg:row-start-1 lg:row-end-2 lg:h-full"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.55, delay: 0.25, ease: "easeOut" }}
                 >
-                    <Image src={imagePaella} alt="paella"
-                        className="object-cover object-bottom w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105"
-                    />
+                    <Image src={imagePaella} alt="paella" className="object-cover object-bottom w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-linear-to-t from-primary to-transparent to-60% opacity-0 transition-opacity duration-500 flex items-end p-5 group-hover:opacity-100">
                         <span className="text-xs font-semibold tracking-widest uppercase text-white">Paella</span>
                     </div>
@@ -106,31 +100,27 @@ export default function PortfolioSection(){
 
                 {/* 04 - Mediterranean */}
                 <motion.div
-                    className="col-start-6 col-end-8 row-start-2 row-end-3 overflow-hidden relative cursor-pointer rounded-xs group"
+                    className="col-span-1 h-40 overflow-hidden relative cursor-pointer rounded-xs group md:col-span-1 md:h-52 lg:col-start-6 lg:col-end-8 lg:row-start-2 lg:row-end-3 lg:h-full"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.55, delay: 0.2, ease: "easeOut" }}
                 >
-                    <Image src={iamgeMediterranean} alt="mediterranean"
-                        className="object-cover object-[50%_62%] w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105"
-                    />
+                    <Image src={iamgeMediterranean} alt="mediterranean" className="object-cover object-[50%_62%] w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-linear-to-t from-primary to-transparent to-60% opacity-0 transition-opacity duration-500 flex items-end p-5 group-hover:opacity-100">
                         <span className="text-xs font-semibold tracking-widest uppercase text-white">Mediterranean</span>
                     </div>
                 </motion.div>
 
-                {/* 05 - Corporate Event — large, entra desde la derecha */}
+                {/* 05 - Corporate Event */}
                 <motion.div
-                    className="col-start-8 col-end-13 row-start-2 row-end-4 overflow-hidden relative cursor-pointer rounded-xs group"
+                    className="col-span-1 h-40 overflow-hidden relative cursor-pointer rounded-xs group md:col-span-3 md:row-span-2 md:h-full lg:col-start-8 lg:col-end-13 lg:row-start-2 lg:row-end-4 lg:h-full"
                     initial={{ opacity: 0, x: 24 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.65, delay: 0.1, ease: "easeOut" }}
                 >
-                    <Image src={imageCorporate} alt="Corporate Event"
-                        className="object-cover w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105"
-                    />
+                    <Image src={imageCorporate} alt="Corporate Event" className="object-cover w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-linear-to-t from-primary to-transparent to-60% opacity-0 transition-opacity duration-500 flex items-end p-5 group-hover:opacity-100">
                         <span className="text-xs font-semibold tracking-widest uppercase text-white">Corporate Event</span>
                     </div>
@@ -138,15 +128,13 @@ export default function PortfolioSection(){
 
                 {/* 06 - South American */}
                 <motion.div
-                    className="col-start-1 col-end-5 row-start-3 row-end-4 overflow-hidden relative cursor-pointer rounded-xs group"
+                    className="col-span-1 h-40 overflow-hidden relative cursor-pointer rounded-xs group md:col-span-2 md:h-52 lg:col-start-1 lg:col-end-5 lg:row-start-3 lg:row-end-4 lg:h-full"
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.55, delay: 0.1, ease: "easeOut" }}
                 >
-                    <Image src={imageSouthAmerican} alt="South American"
-                        className="object-cover object-center w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105"
-                    />
+                    <Image src={imageSouthAmerican} alt="South American" className="object-cover object-center w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-linear-to-t from-primary to-transparent to-60% opacity-0 transition-opacity duration-500 flex items-end p-5 group-hover:opacity-100">
                         <span className="text-xs font-semibold tracking-widest uppercase text-white">South American</span>
                     </div>
@@ -154,15 +142,13 @@ export default function PortfolioSection(){
 
                 {/* 07 - Private Dining */}
                 <motion.div
-                    className="col-start-5 col-end-8 row-start-3 row-end-4 overflow-hidden relative cursor-pointer rounded-xs group"
+                    className="col-span-1 h-40 overflow-hidden relative cursor-pointer rounded-xs group md:col-span-2 md:h-52 lg:col-start-5 lg:col-end-8 lg:row-start-3 lg:row-end-4 lg:h-full"
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.55, delay: 0.22, ease: "easeOut" }}
                 >
-                    <Image src={imagePrivateDining} alt="Private Dining"
-                        className="object-cover w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105"
-                    />
+                    <Image src={imagePrivateDining} alt="Private Dining" className="object-cover w-full h-full transition-all duration-300 ease-in-out brightness-95 group-hover:brightness-100 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-linear-to-t from-primary to-transparent to-60% opacity-0 transition-opacity duration-500 flex items-end p-5 group-hover:opacity-100">
                         <span className="text-xs font-semibold tracking-widest uppercase text-white">Private Dining</span>
                     </div>

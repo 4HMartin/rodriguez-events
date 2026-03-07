@@ -12,7 +12,7 @@ export default function Home() {
       <HeroSection />
       <TrustBanner />
       <ServicesSection />
-      {/* <PortfolioSection /> */}
+      <PortfolioSection />
       {/* <AboutSection /> */}
       {/* <ReviewsSection /> */}
       {/* <CTABandSection /> */}
