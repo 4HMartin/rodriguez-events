@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink, MapPin } from "lucide-react";
+import { ExternalLink, Heart, MapPin } from "lucide-react";
 import logotype from "@/public/images/ui/logotype.webp";
 
 export default function Footer(){
@@ -11,20 +11,23 @@ export default function Footer(){
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-charcoal pt-20 pb-8 px-[7vw] text-cream">
+        <footer className="bg-charcoal pt-14 pb-8 px-6 text-cream sm:px-10 sm:pt-16 lg:pt-20 lg:px-[7vw]">
+
             {/* Grid */}
-            <section className="grid grid-cols-6 gap-x-16 mb-16">
+            <section className="grid grid-cols-2 gap-x-8 gap-y-10 mb-12 sm:grid-cols-3 sm:gap-x-10 lg:grid-cols-6 lg:gap-x-6 lg:mb-16 xl:gap-y-6">
+
                 {/* Logotype */}
-                <div className="row-start-1 max-w-62 rounded-full overflow-hidden">
-                    <Image src={logotype} width={300} height={300} alt="Rodriguez Events Limited" quality={100} className="object-cover w-full h-full"/>
+                <div className="col-span-2 flex justify-center sm:col-span-1 sm:justify-start lg:col-span-2 lg:row-start-1 rounded-full overflow-hidden xl:max-w-fit">
+                    <Image src={logotype} width={300} height={300} alt="Rodriguez Events Limited" quality={100} className="object-cover w-full"/>
                 </div>
+
                 {/* Brand */}
-                <article className="row-start-1">
-                    <p className="leading-relaxed max-w-70 mb-6 text-charcoal-pale">
+                <article className="col-span-2 sm:col-span-2 lg:col-span-1 lg:row-start-1">
+                    <p className="leading-relaxed max-w-full text-center mb-6 text-charcoal-pale sm:max-w-70 md:text-start">
                         A family-run catering company bringing the warmth of Spanish, South American & Mediterranean cuisine to your most cherished celebrations.
                     </p>
                     {/* Social links */}
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 justify-center md:justify-start">
                         {/* Instagram */}
                         <Link href={`${instagramLink}`} className="w-10 h-10 rounded-full border border-slate-500 flex items-center justify-center transition-all duration-300 text-decoration-none group hover:border-secondary hover:bg-secondary/10 hover:text-secondary">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9b9b9b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
@@ -36,14 +39,14 @@ export default function Footer(){
                         {/* TikTok */}
                         <Link href={`${tiktokLink}`} className="w-10 h-10 rounded-full border border-slate-500 flex items-center justify-center transition-all duration-300 text-decoration-none group hover:border-secondary hover:bg-secondary/10 hover:text-secondary">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#9b9b9b" viewBox="0 0 16 16">
-                            <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+                                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
                             </svg>
                         </Link>
                     </div>
                 </article>
 
                 {/* Services column */}
-                <article className="row-start-1 col-start-5">
+                <article className="col-span-1 lg:row-start-1 lg:col-start-5">
                     <h4 className="font-sans! text-xs font-semibold tracking-widest uppercase text-white/90 mb-6">
                         Services
                     </h4>
@@ -72,7 +75,7 @@ export default function Footer(){
                 </article>
 
                 {/* Company column */}
-                <article className="row-start-1 col-start-6">
+                <article className="col-span-1 lg:row-start-1 lg:col-start-6">
                     <h4 className="font-sans! text-xs font-semibold tracking-widest uppercase text-white/90 mb-6">
                         Company
                     </h4>
@@ -94,44 +97,36 @@ export default function Footer(){
                         </li>
                         <li>
                             <Link href={'/privacy-policy'} className="text-sm text-charcoal-pale transition-all duration-200 hover:text-secondary">
-                                Pivacy Policy
+                                Privacy Policy
                             </Link>
                         </li>
                     </ul>
                 </article>
-                <div className="row-start-2 col-start-5 col-span-2 flex items-center gap-2">
-                    <MapPin className="w-6 h-6 text-white/90"/>
-                    <span className="text-sm text-charcoal-pale transition-all duration-200 hover:text-secondary">
+
+                {/* Location */}
+                <div className="col-span-2 flex items-start gap-2 sm:col-span-3 lg:row-start-2 lg:col-start-5 lg:col-span-2">
+                    <MapPin className="w-5 h-5 text-white/90 shrink-0 mt-0.5 lg:w-6 lg:h-6"/>
+                    <span className="text-sm text-charcoal-pale">
                         Covering Shropshire, Staffordshire, North Wales and the West Midlands.
                     </span>
                 </div>
 
-                {/* Newsletter column */}
-                {/* <article>
-                    <h4>Stay in Touch</h4>
-                    <p>
-                        Get seasonal menu updates and event inspiration delivered to your inbox.
-                    </p>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <input type="email" name="newsletterEmail" id="newsletterEmail" placeholder="Your email address" />
-                        <button type="submit">Subscribe</button>
-                    </form>
-                </article> */}
             </section>
 
             {/* Footer Bottom */}
-            <section className="pt-8 border border-transparent border-t-charcoal-light flex justify-between items-center flex-wrap gap-4">
-                <p className="font-sans text-charcoal-pale">
-                    © {currentYear} Rodriguez Events Ltd.  —{'  '} 
+            <section className="pt-8 border border-transparent border-t-charcoal-light flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center sm:flex-wrap sm:gap-4">
+                <p className="font-sans text-charcoal-pale text-sm sm:text-base">
+                    © {currentYear} Rodriguez Events Ltd.  —{'  '}
                     <Link href={'/privacy-policy'} className="text-secondary">
                         Privacy Policy
                     </Link>
                 </p>
-                <Link href={'https://4hmartin.com/'} target="_blank" className="font-sans text-charcoal-pale group flex items-center gap-2">
-                    Crafted with passion by <em className="text-emerald-500">Heber Martin Rodríguez</em>
+                <Link href={'https://4hmartin.com/'} target="_blank" className="font-sans text-charcoal-pale text-sm group flex items-center gap-2 sm:text-base">
+                    Crafted with <Heart className="w-3.5 h-3.5 text-charcoal-pale"/> by <span className="text-secondary">Heber Martin Rodríguez</span>
                     <ExternalLink className="w-3 h-3 text-white transition-all duration-300 group-hover:text-emerald-500"/>
                 </Link>
             </section>
+
         </footer>
-    )
+    );
 }

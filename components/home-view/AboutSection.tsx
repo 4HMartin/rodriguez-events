@@ -23,7 +23,7 @@ export default function AboutSection(){
                     whileInView={{ opacity: 1, x: 0, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-                    className="absolute top-4 left-4 z-10 sm:top-6 sm:left-6"
+                    className="absolute top-4 left-4 z-10 sm:top-6 sm:left-6 md:top-[56%] xl:top-4"
                 >
                     <Link
                         href={`${awardLink}`}
@@ -50,14 +50,14 @@ export default function AboutSection(){
                     <Image
                         src={aboutImage}
                         alt="A family passion for culinary excellence"
-                        className="object-cover object-[50%_100%] w-full h-full opacity-95"
+                        className="object-cover object-center md:object-[50%_100%] w-full h-full opacity-95"
                     />
                 </motion.div>
 
             </article>
 
             {/*  Content — right side  */}
-            <article className="px-6 py-12 sm:px-10 sm:py-16 md:py-20 md:pr-[6vw] md:pl-[4vw]">
+            <article className="relative px-6 py-12 sm:px-10 sm:py-16 md:py-20 md:pr-[6vw] md:pl-[4vw]">
                 <div className="flex flex-col items-start md:flex-row md:items-center md:gap-0">
                     <div>
 
@@ -103,12 +103,11 @@ export default function AboutSection(){
                         >
                             Rodriguez Events is a catering business run by husband-and-wife team Emma and Heber, who leverage over 30 years of high-end hospitality experience—including Michelin-starred backgrounds.
                         </motion.p>
-
                     </div>
 
                     {/* Logotype */}
                     <motion.div
-                        className="overflow-hidden w-48 shrink-0 self-center md:max-w-80 md:w-auto"
+                        className="overflow-hidden w-48 shrink-0 self-center sm:self-start md:max-w-80 md:w-auto md:hidden 2xl:block 2xl:w-[35%] 2xl:self-center"
                         initial={{ opacity: 0, x: 24 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
@@ -124,7 +123,7 @@ export default function AboutSection(){
 
                 {/* Cuisine tags */}
                 <motion.div
-                    className="flex flex-wrap gap-2 mt-6 text-secondary sm:gap-2.5 sm:mt-8"
+                    className="relative flex flex-wrap gap-2 mt-6 text-secondary sm:absolute sm:w-85 sm:right-12 sm:bottom-26 sm:gap-2.5 sm:mt-8 md:relative md:w-95 md:bottom-12 md:right-0"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true, amount: 0.4 }}

@@ -15,7 +15,7 @@ export default function Home() {
       <PortfolioSection />
       <AboutSection />
       <ReviewsSection />
-      {/* <CTABandSection /> */}
+      <CTABandSection />
     </main>
   );
 }
