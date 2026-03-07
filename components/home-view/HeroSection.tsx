@@ -5,14 +5,14 @@ import heroImage01 from "@/public/images/ui/hero/IMG_wedding.webp";
 import { motion } from "framer-motion";
 
 export default function HeroSection(){
-
     return (
-        <section className="min-h-screen w-full grid grid-cols-2 pt-32.5 relative overflow-x-hidden">
-            {/* Text content - left side */}
-            <article className="flex flex-col justify-center py-[6vw] pr-[5vw] pl-[7vw]">
+        <section className="md:min-h-screen w-full relative overflow-x-hidden grid grid-cols-1 pt-20 sm:pt-24 md:grid-cols-2 md:pt-28 lg:pt-32">
+            {/* Text content */}
+            <article className="flex flex-col justify-start px-6 py-12 sm:px-10 sm:py-20 md:py-[6vw] md:pr-[4vw] md:pl-[6vw] lg:pl-[7vw] lg:pr-[5vw]">
                 {/* Tag */}
                 <motion.span
-                    className="inline-flex items-center gap-2.5 text-sm font-semibold tracking-widest uppercase text-secondary mb-8 before:w-10 before:h-px before:bg-secondary"
+                    className="inline-flex items-center gap-2.5 text-xs font-semibold tracking-widest uppercase text-secondary mb-6
+                        before:w-8 before:h-px before:bg-secondary sm:text-sm sm:mb-8 sm:before:w-10"
                     initial={{ opacity: 0, y: 28 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
@@ -20,9 +20,9 @@ export default function HeroSection(){
                     Family-Run · Est. Shropshire
                 </motion.span>
 
-                {/* H1 title */}
-                <motion.h1 
-                    className="text-7xl font-bold leading-tight text-charcoal mb-6"
+                {/* H1 */}
+                <motion.h1
+                    className="text-4xl font-bold leading-tight text-charcoal mb-5 sm:text-5xl sm:mb-6 md:text-6xl xl:text-7xl"
                     initial={{ opacity: 0, y: 28 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.85, ease: "easeOut" }}
@@ -32,9 +32,9 @@ export default function HeroSection(){
                     Moments
                 </motion.h1>
 
-                {/* Hero sub */}
-                <motion.p 
-                    className="text-lg font-serif font-light leading-relaxed text-charcoal-light max-w-105 mb-12"
+                {/* Subtitle */}
+                <motion.p
+                    className="text-base font-serif font-light leading-relaxed text-charcoal-light mb-10 sm:text-lg sm:max-w-lg sm:mb-12 md:max-w-xl"
                     initial={{ opacity: 0, y: 28 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.05, ease: "easeOut" }}
@@ -43,38 +43,56 @@ export default function HeroSection(){
                 </motion.p>
 
                 {/* CTAs */}
-                <motion.div 
-                    className="flex items-center gap-4"
+                <motion.div
+                    className="flex flex-col gap-3 xs:flex-row xs:items-center xs:gap-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.2, ease: "easeOut" }}
                 >
-                    <Link href={"/contact"} className="w-fit min-w-fit py-3 px-6 border-2 border-primary bg-primary text-white transition-all duration-300 text-sm uppercase tracking-wider font-medium rounded-xs hover:bg-white hover:text-primary lg:block">
-                        Book Your Event
-                    </Link>
-                    <Link href={"/gallery"} className="w-fit min-w-fit py-3 px-6 border-2 border-charcoal bg-transparent text-charcoal transition-all duration-300 text-sm uppercase tracking-wider font-medium rounded-xs hover:bg-primary/5 hover:border-primary hover:text-primary lg:block">
-                        View our work
-                    </Link>
+                    <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}>
+                        <Link
+                            href="/contact"
+                            className="block text-center py-3 px-6 border-2 border-primary bg-primary text-white
+                                transition-all duration-300 text-sm uppercase tracking-wider font-medium rounded-xs
+                                hover:bg-white hover:text-primary sm:w-fit sm:min-w-fit"
+                        >
+                            Book Your Event
+                        </Link>
+                    </motion.div>
+                    <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}>
+                        <Link
+                            href="/gallery"
+                            className="block text-center py-3 px-6 border-2 border-charcoal bg-transparent text-charcoal
+                                transition-all duration-300 text-sm uppercase tracking-wider font-medium rounded-xs
+                                hover:bg-primary/5 hover:border-primary hover:text-primary sm:w-fit sm:min-w-fit"
+                        >
+                            View our work
+                        </Link>
+                    </motion.div>
                 </motion.div>
             </article>
 
-            {/* Image section - right side */}
-            <article className="relative overflow-hidden">
+            {/* Image oculta en móvil, visible desde md */}
+            <article className="
+                hidden
+                md:block md:relative md:overflow-hidden
+            ">
                 <motion.div
                     className="absolute inset-0"
                     initial={{ scale: 1.15, opacity: 0, x: 20, y: 20 }}
                     animate={{ scale: 1.05, opacity: 1, x: 0, y: 0 }}
                     transition={{ duration: 1.6, ease: "easeOut" }}
                 >
-                    <Image 
+                    <Image
                         src={heroImage01}
-                        alt="hero_section_image"
+                        alt="Wedding catering by Rodriguez Events"
                         className="w-full h-full object-cover"
+                        priority
                     />
                 </motion.div>
                 {/* Overlay - CSS custom class for radial-gradients */}
-                <div className="hero-img-overlay"></div>
+                <div className="hero-img-overlay" />
             </article>
         </section>
-    )
+    );
 }

@@ -89,7 +89,7 @@ export default function Header() {
             </motion.div>
 
             {/* Main header */}
-            <motion.header className={`w-full flex flex-row justify-between items-center px-4 top-0 bg-[--background] py-4 z-50 transition-all ease-in-out duration-300 border border-transparent border-b-secondary-light sm:top-8 md:h-20 md:py-12 md:px-8 lg:px-16 xl:px-30 ${isScrolled ? "fixed top-0! backdrop-blur-md bg-background/10 shadow-md shadow-black/5" : "absolute top-0"}`}
+            <motion.header className={`w-full bg-cream flex flex-row justify-between items-center px-4 top-1 py-4 z-50 transition-all ease-in-out duration-300 border border-transparent border-b-secondary-light sm:top-8 md:h-24 md:py-12 md:px-8 lg:px-16 xl:px-30 ${isScrolled ? "fixed top-0! backdrop-blur-md bg-background/10 shadow-md shadow-black/5" : "absolute top-0"}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.85, ease: "easeInOut" }}
