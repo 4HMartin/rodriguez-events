@@ -5,6 +5,7 @@ import PortfolioSection from "@/components/home-view/PortfolioSection";
 import ReviewsSection from "@/components/home-view/ReviewsSection";
 import ServicesSection from "@/components/home-view/ServicesSection";
 import TrustBanner from "@/components/home-view/TrustBanner";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <AboutSection />
       <ReviewsSection />
       <CTABandSection />
+      <SocialLinks />
     </main>
   );
 }

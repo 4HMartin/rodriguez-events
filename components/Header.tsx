@@ -131,9 +131,11 @@ export default function Header() {
                 </nav>
 
                 {/* Contact us button */}
-                <Link href="/contact" onClick={toggleMenu} className={`hidden relative w-fit min-w-fit py-3 px-6 border-2 border-primary bg-primary text-white transition-all duration-300 text-sm uppercase tracking-wider font-medium rounded-xs hover:bg-white hover:text-primary lg:block ${isActive('/contact') ? 'active-button' : ''}`}>
-                    request a quote
-                </Link>
+                <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}>
+                    <Link href="/contact" onClick={toggleMenu} className={`hidden relative w-fit min-w-fit py-3 px-6 border-2 border-primary bg-primary text-white transition-all duration-300 text-sm uppercase tracking-wider font-medium rounded-xs hover:bg-white hover:text-primary lg:block ${isActive('/contact') ? 'active-button' : ''}`}>
+                        request a quote
+                    </Link>
+                </motion.div>
             </motion.header>
         </>
     )
