@@ -140,14 +140,14 @@ export default function ReviewsSection(){
     ];
 
     return (
-        <section className="py-24 px-[7vw] bg-cream-warm overflow-hidden">
+        <section className="py-16 px-6 bg-cream-warm overflow-hidden sm:py-20 sm:px-10 lg:py-24 lg:px-[7vw]">
 
             {/*  Header  */}
-            <article className="mb-14">
+            <article className="mb-10 sm:mb-14">
 
                 {/* Tag */}
                 <motion.span
-                    className="inline-flex items-center gap-2.5 text-sm font-semibold tracking-widest uppercase text-secondary mb-8 before:w-10 before:h-px before:bg-secondary"
+                    className="inline-flex items-center gap-2.5 text-sm font-semibold tracking-widest uppercase text-secondary mb-6 before:w-10 before:h-px before:bg-secondary sm:mb-8"
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
@@ -158,7 +158,7 @@ export default function ReviewsSection(){
 
                 {/* Title */}
                 <motion.h2
-                    className="text-5xl font-bold leading-tight text-charcoal mb-6"
+                    className="text-3xl font-bold leading-tight text-charcoal mb-6 sm:text-4xl lg:text-5xl"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
@@ -179,14 +179,14 @@ export default function ReviewsSection(){
 
                 {/* Aggregate score */}
                 <motion.div
-                    className="flex items-center gap-6 mb-10 flex-wrap"
+                    className="flex items-center gap-4 mb-8 flex-wrap sm:gap-6 sm:mb-10"
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                 >
                     <motion.div
-                        className="font-serif text-6xl font-bold text-primary leading-normal"
+                        className="font-serif text-5xl font-bold text-primary leading-normal sm:text-6xl"
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true, amount: 0.5 }}
@@ -217,9 +217,7 @@ export default function ReviewsSection(){
 
             {/*  Track wrap  */}
             <motion.article
-                className="overflow-x-hidden relative
-                    before:absolute before:top-0 before:bottom-0 before:w-20 before:z-20 before:pointer-events-none before:left-0 before:bg-linear-to-r before:from-cream-warm before:to-transparent
-                    after:absolute after:top-0 after:bottom-0 after:w-20 after:z-20 after:pointer-events-none after:right-0 after:bg-linear-to-l after:from-cream-warm after:to-transparent"
+                className="overflow-x-hidden relative before:absolute before:top-0 before:bottom-0 before:w-8 before:z-20 before:pointer-events-none before:left-0 before:bg-linear-to-r before:from-cream-warm before:to-transparent after:absolute after:top-0 after:bottom-0 after:w-8 after:z-20 after:pointer-events-none after:right-0 after:bg-linear-to-l after:from-cream-warm after:to-transparent sm:before:w-14 sm:after:w-14 lg:before:w-20 lg:after:w-20"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -227,7 +225,7 @@ export default function ReviewsSection(){
             >
                 {/* Track */}
                 <motion.div
-                    className="flex gap-6 w-max"
+                    className="flex gap-4 w-max sm:gap-6"
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}
                     animate={{ x: isPaused ? undefined : [0, -1000] }}
@@ -245,7 +243,7 @@ export default function ReviewsSection(){
                             key={index}
                             href={review.link}
                             target="_blank"
-                            className="bg-cream shrink-0 w-85 p-8 border-t-[3px] border-t-secondary relative rounded-xs transition-all duration-300 group hover:shadow-sm hover:-translate-y-2"
+                            className="bg-cream shrink-0 w-72 p-6 border-t-[3px] border-t-secondary relative rounded-xs transition-all duration-300 group hover:shadow-sm hover:-translate-y-2 sm:w-80 sm:p-7 lg:w-85 lg:p-8"
                         >
                             <div>
                                 {[...Array(review.stars)].map((_, i) => (
@@ -254,7 +252,7 @@ export default function ReviewsSection(){
                             </div>
                             <Quote className="w-6 h-6 text-secondary-pale absolute top-2 right-2 group-hover:hidden"/>
                             <ExternalLink className="hidden w-6 h-6 text-secondary-light absolute top-2 right-2 group-hover:block"/>
-                            <p className="max-h-52 font-serif text-lg leading-relaxed italic text-charcoal mb-6 overflow-hidden wrap-break-word">
+                            <p className="max-h-52 font-serif text-base leading-relaxed italic text-charcoal mb-6 overflow-hidden wrap-break-word sm:text-lg">
                                 {review.text}
                             </p>
                             <div className="flex items-center gap-3">

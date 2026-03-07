@@ -13,8 +13,8 @@ export default function Home() {
       <TrustBanner />
       <ServicesSection />
       <PortfolioSection />
-      {/* <AboutSection /> */}
-      {/* <ReviewsSection /> */}
+      <AboutSection />
+      <ReviewsSection />
       {/* <CTABandSection /> */}
     </main>
   );

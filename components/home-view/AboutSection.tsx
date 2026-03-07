@@ -12,10 +12,10 @@ export default function AboutSection(){
     const awardLink = process.env.NEXT_PUBLIC_AWARD_LINK || "";
 
     return (
-        <section className="grid grid-cols-2 bg-primary max-h-150">
+        <section className="grid grid-cols-1 bg-primary md:grid-cols-2 md:max-h-150">
 
             {/*  Image — left side  */}
-            <article className="relative overflow-hidden max-h-150 after:absolute after:inset-0 after:bg-linear-to-r after:from-75% after:from-transparent after:to-primary">
+            <article className="relative overflow-hidden h-72 sm:h-96 md:h-auto md:max-h-150 after:absolute after:inset-0 after:bg-linear-to-b after:from-transparent after:from-60% after:to-primary md:after:bg-linear-to-r md:after:from-75% md:after:from-transparent md:after:to-primary">
 
                 {/* TWIA Award badge */}
                 <motion.div
@@ -23,14 +23,14 @@ export default function AboutSection(){
                     whileInView={{ opacity: 1, x: 0, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-                    className="absolute top-6 left-6 z-10"
+                    className="absolute top-4 left-4 z-10 sm:top-6 sm:left-6"
                 >
                     <Link
                         href={`${awardLink}`}
                         target="_blank"
-                        className="block p-2 w-38 rounded-lg bg-cream border-2 border-b-pink-700 shadow-xl group"
+                        className="block p-2 w-28 rounded-lg bg-cream border-2 border-b-pink-700 shadow-xl group sm:w-38"
                     >
-                        <ExternalLink className="absolute top-2 right-2 w-5 h-5 transition-all group-hover:text-pink-700"/>
+                        <ExternalLink className="absolute top-2 right-2 w-4 h-4 transition-all group-hover:text-pink-700 sm:w-5 sm:h-5"/>
                         <Image
                             src={TWIAAward}
                             alt="The wedding industry awards - 2025 - Rodriguez Events"
@@ -57,13 +57,13 @@ export default function AboutSection(){
             </article>
 
             {/*  Content — right side  */}
-            <article className="py-20 pr-[6vw] pl-[4vw]">
-                <div className="flex items-center">
+            <article className="px-6 py-12 sm:px-10 sm:py-16 md:py-20 md:pr-[6vw] md:pl-[4vw]">
+                <div className="flex flex-col items-start md:flex-row md:items-center md:gap-0">
                     <div>
 
                         {/* Tag */}
                         <motion.span
-                            className="inline-flex items-center gap-2.5 text-sm font-semibold tracking-widest uppercase text-secondary mb-8 before:w-10 before:h-px before:bg-secondary"
+                            className="inline-flex items-center gap-2.5 text-sm font-semibold tracking-widest uppercase text-secondary mb-6 before:w-10 before:h-px before:bg-secondary sm:mb-8"
                             initial={{ opacity: 0, y: 16 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.4 }}
@@ -74,7 +74,7 @@ export default function AboutSection(){
 
                         {/* Title */}
                         <motion.h2
-                            className="text-5xl font-bold leading-tight text-white mb-6"
+                            className="text-3xl font-bold leading-tight text-white mb-6 sm:text-4xl lg:text-5xl"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.4 }}
@@ -95,7 +95,7 @@ export default function AboutSection(){
 
                         {/* Description */}
                         <motion.p
-                            className="text-lg font-serif font-light leading-relaxed text-cream-warm max-w-105 mb-12"
+                            className="text-base font-serif font-light leading-relaxed text-cream-warm mb-10 sm:text-lg sm:mb-12 lg:max-w-105"
                             initial={{ opacity: 0, y: 16 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.4 }}
@@ -108,7 +108,7 @@ export default function AboutSection(){
 
                     {/* Logotype */}
                     <motion.div
-                        className="overflow-hidden max-w-80"
+                        className="overflow-hidden w-48 shrink-0 self-center md:max-w-80 md:w-auto"
                         initial={{ opacity: 0, x: 24 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
@@ -124,7 +124,7 @@ export default function AboutSection(){
 
                 {/* Cuisine tags */}
                 <motion.div
-                    className="flex flex-wrap gap-2.5 mt-8 text-secondary"
+                    className="flex flex-wrap gap-2 mt-6 text-secondary sm:gap-2.5 sm:mt-8"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true, amount: 0.4 }}
@@ -133,7 +133,7 @@ export default function AboutSection(){
                     {["Spanish", "South American", "Mediterranean", "Dietary Inclusive"].map((tag, i) => (
                         <motion.span
                             key={tag}
-                            className="py-1.5 px-5 border border-secondary rounded-2xl text-xs font-medium tracking-wider uppercase"
+                            className="py-1.5 px-4 border border-secondary rounded-2xl text-xs font-medium tracking-wider uppercase sm:px-5"
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.4 }}
