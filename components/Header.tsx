@@ -1,18 +1,16 @@
 'use client';
-// components
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-// local images
+import Image from "next/image";
 import imagotype from '@/public/images/ui/imagotype_300x300.png';
 import logo_text from '@/public/images/ui/logo_text_650x164.png';
 // import logotype from '@/public/images/ui/logotype_250x250.png';
-// icons
-import { LucideX, Menu, Mail, Phone, Award, ExternalLink } from "lucide-react";
+import { LucideX, Menu, Mail, Phone, Award, ExternalLink, MenuIcon } from "lucide-react";
+import MobileMenu from "./MobileMenu";
 
-export default function Header(){
+export default function Header() {
 
     const pathname = usePathname();
     const isActive = (href: string) => {
@@ -30,13 +28,13 @@ export default function Header(){
     const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "";
     const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || "";
 
-    useEffect(()=>{
+    useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
         }
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    },[]);
+    }, []);
 
     const NavLinks = ({ toggleMenu }: NavLinkProps) => (
         <>
@@ -61,48 +59,51 @@ export default function Header(){
         </>
     );
 
-    return(
+    return (
         <>
-        {/* Top header */}
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeInOut" }}
-            className="hidden absolute top-0 left-0 z-50 w-full bg-primary sm:flex items-center py-1 sm:justify-center sm:gap-8 sm:px-2 lg:px-16 xl:px-30 lg:justify-between"
-        >
-            {/* Award link */}
-            <Link href={`${awardLink}`} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
-                <Award className="w-5 text-white pb-0.5 transition-all group-hover:text-secondary"/>
-                The Wedding Industry Awards
-                <ExternalLink className="w-4 text-white/50 pb-0.5 transition-all hidden group-hover:block"/>
-            </Link>
-            <div className="flex items-center gap-8">
-                {/* Email link */}
-                <Link href={`mailto:${contactEmail}`} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
-                    <Mail className="w-5 text-white pb-0.5 transition-all group-hover:text-secondary"/>
-                    hola@rodriguez-events.com
+            {/* Top header */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+                className="hidden absolute top-0 left-0 z-50 w-full bg-primary sm:flex items-center py-1 sm:justify-center sm:gap-8 sm:px-2 lg:px-16 xl:px-30 lg:justify-between"
+            >
+                {/* Award link */}
+                <Link href={`${awardLink}`} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
+                    <Award className="w-5 text-white pb-0.5 transition-all group-hover:text-secondary" />
+                    The Wedding Industry Awards
+                    <ExternalLink className="w-4 text-white/50 pb-0.5 transition-all hidden group-hover:block" />
                 </Link>
-                {/* Phone link */}
-                <Link href={`tel:${contactPhone}`} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
-                    <Phone className="w-4.5 text-white pb-0.5 transition-all group-hover:text-secondary"/>
-                    07495313711
-                </Link>
-            </div>
-        </motion.div>
+                <div className="flex items-center gap-8">
+                    {/* Email link */}
+                    <Link href={`mailto:${contactEmail}`} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
+                        <Mail className="w-5 text-white pb-0.5 transition-all group-hover:text-secondary" />
+                        hola@rodriguez-events.com
+                    </Link>
+                    {/* Phone link */}
+                    <Link href={`tel:${contactPhone}`} className="flex itmes-center gap-2 text-white text-sm group hover:cursor-pointer">
+                        <Phone className="w-4.5 text-white pb-0.5 transition-all group-hover:text-secondary" />
+                        07495313711
+                    </Link>
+                </div>
+            </motion.div>
 
-        {/* Main header */}
-        <motion.header className={`w-full flex flex-row justify-between items-center px-4 top-0 bg-[--background] py-4 z-50 transition-all ease-in-out duration-300 border border-transparent border-b-secondary-light sm:top-8 md:h-20 md:py-12 md:px-8 lg:px-16 xl:px-30 ${isScrolled ? "fixed top-0! backdrop-blur-md bg-background/10 shadow-md shadow-black/5" : "absolute top-0"}`}
+            {/* Main header */}
+            <motion.header className={`w-full flex flex-row justify-between items-center px-4 top-0 bg-[--background] py-4 z-50 transition-all ease-in-out duration-300 border border-transparent border-b-secondary-light sm:top-8 md:h-20 md:py-12 md:px-8 lg:px-16 xl:px-30 ${isScrolled ? "fixed top-0! backdrop-blur-md bg-background/10 shadow-md shadow-black/5" : "absolute top-0"}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.85, ease: "easeInOut" }}
             >
+                {/* Mobile Menu component */}
+                <MobileMenu />
+
                 {/* Imagotype */}
                 <Link href="/">
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.15, duration: 1.05, ease: "easeOut" }}
-                        className="relative w-68 flex items-center gap-4 lg:w-20 xl:w-68"
+                        className="hidden relative w-68 items-center gap-4 md:flex lg:w-20 xl:w-68"
                     >
                         {/* <Image
                             src={logotype}
@@ -123,59 +124,17 @@ export default function Header(){
                 </Link>
 
                 <nav className="flex justify-end items-center font-semibold tracking-wide w-fit whitespace-nowrap xl:gap-8">
-                    {/* Botón del menú hamburguesa */}
-                    <button className="lg:hidden" onClick={toggleMenu}>
-                        {isOpen ? <LucideX className="w-8 h-8 text-charcoal "/> : <Menu className="w-8 h-8 text-charcoal "/>}
-                    </button>
-
                     {/* Menú de navegación */}
                     <div className="hidden lg:flex lg:justify-between lg:items-center lg:w-fit lg:gap-4 2xl:gap-8">
                         <NavLinks />
                     </div>
-
-                    {/* Menú hamburguesa desplegable */}
-                    {isOpen && (
-                        <motion.div
-                            initial={{ x: '100%' }}
-                            animate={{ x: 0 }}
-                            exit={{ x: '100%' }}
-                            transition={{ type: 'tween', duration: 0.2, ease: 'easeOut' }}
-                            className={`fixed top-0 right-0 h-full w-64 bg-cream-warm shadow-lg flex flex-col items-start gap-4 p-6 lg:hidden z-100`}
-                        >
-                            <button className="self-end mb-4 md:mr-8" onClick={toggleMenu}>
-                                <LucideX className={`w-8 h-8`} />
-                            </button>
-                            <NavLinks toggleMenu={toggleMenu} />
-
-                            <div className="flex flex-col w-full items-start mt-16 gap-4">
-                                {/* Award link */}
-                                <Link href={"https://directory.the-wedding-industry-awards.co.uk/united-kingdom/oswestry/wedding-caterer/rodriguez-events-ltd"} className="flex items-center justify-center gap-2 text-charcoal text-sm font-light group hover:cursor-pointer">
-                                    <Award className="w-4 text-charcoal pb-0.5 transition-all group-hover:text-secondary"/>
-                                    The Wedding Industry Awards
-                                </Link>
-                                
-                                {/* Email link */}
-                                <Link href={"mailto:hola@rodriguez-events.com"} className="flex itmes-center gap-2 text-charcoal text-sm  font-light group hover:cursor-pointer">
-                                    <Mail className="w-4 text-charcoal pb-0.5 transition-all group-hover:text-secondary"/>
-                                    hola@rodriguez-events.com
-                                </Link>
-                                
-                                {/* Phone link */}
-                                <Link href={"tel:07495313711"} className="flex itmes-center gap-2 text-charcoal text-sm font-light group hover:cursor-pointer">
-                                    <Phone className="w-4 text-charcoal pb-0.5 transition-all group-hover:text-secondary"/>
-                                    07495313711
-                                </Link>
-                                
-                            </div>
-                        </motion.div>
-                    )}
                 </nav>
 
                 {/* Contact us button */}
                 <Link href="/contact" onClick={toggleMenu} className={`hidden relative w-fit min-w-fit py-3 px-6 border-2 border-primary bg-primary text-white transition-all duration-300 text-sm uppercase tracking-wider font-medium rounded-xs hover:bg-white hover:text-primary lg:block ${isActive('/contact') ? 'active-button' : ''}`}>
                     request a quote
                 </Link>
-        </motion.header>
+            </motion.header>
         </>
     )
 }

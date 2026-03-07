@@ -9,13 +9,13 @@ import TrustBanner from "@/components/home-view/TrustBanner";
 export default function Home() {
   return (
     <main className="min-h-screen w-full">
-      <HeroSection />
-      <TrustBanner />
-      <ServicesSection />
-      <PortfolioSection />
-      <AboutSection />
-      <ReviewsSection />
-      <CTABandSection />
+      {/* <HeroSection /> */}
+      {/* <TrustBanner /> */}
+      {/* <ServicesSection /> */}
+      {/* <PortfolioSection /> */}
+      {/* <AboutSection /> */}
+      {/* <ReviewsSection /> */}
+      {/* <CTABandSection /> */}
     </main>
   );
 }
